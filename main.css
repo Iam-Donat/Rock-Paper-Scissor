@@ -1,0 +1,27 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: antiquewhite;
+    font-size: 1.2rem;
+    text-align: center;
+    font-family: 'Fira Sans', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: brown;
+    font-weight: 700;
+}
+
+button {
+   border: none;
+   border-radius: 5px;
+   margin-top: 1rem;
+    padding:.5rem 1rem;
+    background-color: black;
+    color: antiquewhite;
+}
