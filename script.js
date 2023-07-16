@@ -1,4 +1,4 @@
-// Getting the Computer Choices
+// Getting Choices 
 const choice = ["Rock", "Paper", "Scissors"]
 
 function getComputerChoice() {
@@ -38,6 +38,7 @@ function playRound(playerSelection, computerSelection) {
 
 }
 
+
 // console.log(playRound(playerSelection, computerSelection));
 
 function game() {
@@ -52,9 +53,9 @@ function game() {
         console.log(playRound(playerSelection, computerSelection));
         console.log('----------------------------------------------------------------');
 
-        if (i === 5) {
-            break;
-        }
+        // if (i === 5) {
+        //     break;
+        // }
     }
 }
 
