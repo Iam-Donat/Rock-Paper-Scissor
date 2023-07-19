@@ -9,35 +9,66 @@
 </head>
 
 <body>
-    <h1>🪨, 📃 ,✂️</h1> <br> <br>
-    <p>Welcome to the Game known as <strong>Rock Paper Scissor</strong> 😊</p> <br>
 
-    <p>
-        If you don't know what's Going on
-        <a href="https://en.wikipedia.org/wiki/Rock_paper_scissors" target="_blank">Click Here</a>
-        to learn more about it!!
+    <h1 class="title">Rock Paper Scissors</h1>
+    <div class="container">
+        <div class="gameDisplay">
+            <div>
+                <p>Player:
+                    <span class="scorePlayer">
+                        0
+                    </span> pts
+                </p>
+
+            </div>
+            <div>
+                <p>Computer:
+                    <span class="scoreComputer">
+                        0
+                    </span> pts
+                </p>
+
+            </div>
+
+        </div>
+        <div class="options">
+            <p>Choose your move:</p>
+            <button data-value="Rock" class="btn">🪨</button>
+            <button data-value="Paper" class="btn">📃</button>
+            <button data-value="Scissors" class="btn">✂️</button>
+        </div>
+        <div class="outputDisplay">
+            <p>
+                Your Choice is:
+                <span class="playerChoice"></span>
+            </p>
+            <p>
+                Computer's Choice is:
+                <span class="computerChoice"></span>
+            </p>
+
+            <p id="message"></p>
+        </div>
+    </div>
+    <hr>
+    <details class="container">
+        <summary>How To Play?</summary>
+        <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vero, quia, iste nulla unde tenetur magni harum
+            porro laudantium illum accusantium quibusdam fuga modi perferendis eum est itaque iusto ullam ipsum!
+        </p>
+    </details>
+
+    <p class="credits">
+        Developed by <a href="http://ntwalii.netlify.app"> Ntwali Pacifique </a>
+        with 💗 - &copy 2023.
     </p>
+    <div class="modal display">
+        <p>You win the Game 👏🏾🏆</p>
+        <button>Restart Game</button>
+    </div>
+    <div class="overlay display">This an Overlay</div>
 
-    <br>
-
-    <p>And unfortunately🥲 for now to know <br>
-        Who's winning, you have to open the console by clicking <strong>F12</strong>
-        on
-        your keyboard. </p>
-    <br>
-    <p>Else click on the <Strong>Button Below To Play👇🏾</Strong></p>
-
-    <button onclick="game()">Start the Game</button>
-
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
     <script src="./script.js"></script>
 </body>
 
