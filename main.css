@@ -12,7 +12,7 @@ body {
     background-color: antiquewhite;
     font-size: 1.3rem;
     font-family: 'VT323', monospace;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -89,6 +89,7 @@ hr {
 /* === DETAILS === */
 details {
     min-height: 10rem;
+    max-width: 200px;
 }
 
 
@@ -121,9 +122,10 @@ summary, details p {
 }
 /* ==== MODAL ==== */
 .modal {
-    position: relative;
-    top: -50%;
-    right:0;
+    position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
     background-color: black;
     color: antiquewhite;
     border-radius: 10px;
@@ -135,22 +137,21 @@ summary, details p {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
     gap: 2rem;
     z-index: 1000;
     box-shadow: 0 0 0.5rem antiquewhite;
+    padding: 2rem;
+    
 }
 
 .modal button {
     background-color: antiquewhite;
     color: black;
     font-weight: 800;
-    box-shadow: 0 0 0.5rem antiquewhite;
 }
 
-.modal button:hover {
-    scale: (-1.1);
-    box-shadow: 0 0 0.2rem antiquewhite;
-}
+
 /* ==== overlay ==== */
 .overlay {
     background: rgba(0, 0, 0, 0.811);
@@ -164,3 +165,15 @@ summary, details p {
 .display {
     display: none;
 }
+
+.winner {
+    border: green 2px solid;
+    box-shadow: 0 0 0.5rem green;
+    color: green;
+}
+.loser {
+    border: red 2px solid;
+    box-shadow: 0 0 0.5rem red;
+    color: red;
+}
+

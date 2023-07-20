@@ -8,30 +8,18 @@ let playerChoiceDisplay = document.querySelector(".playerChoice");
 let computerChoiceDisplay = document.querySelector(".computerChoice");
 let message = document.querySelector("#message");
 
+const overlay = document.querySelector(".overlay");
+const modal = document.querySelector(".modal"); //Winner Announcement 
+const winner = document.querySelector(".winnerDisplay");
+
+const restartButton = document.querySelector("#restartBtn"); // Reset the game
+
 
 //Initializing Score Value
-let playerScore = 0;  // scores
-let computerScore = 0;  // scores
+let playerScore = 0;  // Initial Player scores
+let computerScore = 0;  // Initial Computer scores
 
-
-let playerMove = "";
-
-let isGame = false; // Control the flow of the game
-
-movesBtn.forEach(btn => {
-    btn.addEventListener("click", () => {
-        ;
-
-        playerMove = btn.getAttribute("data-value");
-
-        game();
-    });
-});
-
-
-
-
-
+let playerMove = ""; // Get Player Choice to trigger the gameplay
 
 function getComputerChoice() {
 
@@ -49,20 +37,13 @@ function getComputerChoice() {
     return playMove;
 }
 
-// // console.log(getComputerChoice());
-
-// // const computerSelection = getComputerChoice();
-
-// // const playerSelection = "Scissors";
-
-// //Function to track the Winner of each round
+// Check winner of each round
 function playRound(playerSelection, computerSelection) {
-
 
     if (playerSelection === computerSelection) {
 
         scorePlayerDisplay.textContent = playerScore;
-        scoreComputerDisplay = computerScore;
+        scoreComputerDisplay.textContent = computerScore;
         // console.log(playerScore);
         // console.log(computerScore);
 
@@ -85,8 +66,6 @@ function playRound(playerSelection, computerSelection) {
     } else {
 
         computerScore++
-
-        console.log('Computer score: ' + computerScore);
         scoreComputerDisplay.textContent = computerScore;
 
         playerChoiceDisplay.textContent = `${playerSelection}`;
@@ -98,7 +77,25 @@ function playRound(playerSelection, computerSelection) {
 
 }
 
-// // console.log(playRound(playerSelection, computerSelection));
+function announceTheWinner() {
+    if (computerScore > playerScore) {
+        modal.classList.add('loser');
+        restartButton.classList.add('loser');
+        modal.classList.remove('display');
+        overlay.classList.remove('display');
+
+        winner.textContent = `Sorry you lost the game🥲!! with a score of ${playerScore} against computer's score of ${computerScore}!`;
+        restartButton.innerHTML = `Try again!!`;
+    } else {
+        modal.classList.add('winner');
+        restartButton.classList.add('winner');
+        modal.classList.remove('display');
+        overlay.classList.remove('display');
+
+        winner.textContent = `You've won!🎇🥳🥂 with a score of ${playerScore} against computer's score of ${computerScore}!`;
+
+    }
+}
 
 function game() {
 
@@ -109,4 +106,18 @@ function game() {
 
 }
 
-// // movesBtn.forEach(btn => { btn.addEventListener("click", game) })
+
+movesBtn.forEach(btn => {
+    btn.addEventListener("click", () => {
+
+        playerMove = btn.getAttribute("data-value");
+
+        if ((playerScore === 5) || (computerScore === 5)) {
+            announceTheWinner();
+        } else {
+            game();
+        }
+    });
+});
+
+restartButton.addEventListener("click", () => { window.location.reload() });
