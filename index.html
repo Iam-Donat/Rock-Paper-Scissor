@@ -5,14 +5,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>🎮Rock Paper Scissors🕹️</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./main.css">
 </head>
 
 <body>
 
     <h1 class="title">Rock Paper Scissors</h1>
-    <div class="container">
-        <div class="gameDisplay">
+    <section class="container">
+        <article class="gameDisplay">
             <div>
                 <p>Player:
                     <span class="scorePlayer">
@@ -30,14 +34,14 @@
 
             </div>
 
-        </div>
-        <div class="options">
+        </article>
+        <article class="options">
             <p>Choose your move:</p>
-            <button data-value="Rock" class="btn">🪨</button>
-            <button data-value="Paper" class="btn">📃</button>
-            <button data-value="Scissors" class="btn">✂️</button>
-        </div>
-        <div class="outputDisplay">
+            <button data-value="Rock" class="btn" alt="rock emoji" aria-label="Rock">🪨</button>
+            <button data-value="Paper" class="btn" alt="paper emoji" aria-label="Paper">📃</button>
+            <button data-value="Scissors" class="btn" alt="scissors emoji" aria-label="Scissors">✂️</button>
+        </article>
+        <article class="outputDisplay">
             <p>
                 Your Choice is:
                 <span class="playerChoice"></span>
@@ -47,9 +51,9 @@
                 <span class="computerChoice"></span>
             </p>
 
-            <p id="message"></p>
-        </div>
-    </div>
+            <p class="message"></p>
+        </article>
+    </section>
     <hr>
     <details class="container">
         <summary>How To Play?</summary>
@@ -72,7 +76,7 @@
     </div>
     <div class="overlay display"></div>
 
-    <script src="./script.js"></script>
+    <script src='./script.js'></script>
 </body>
 
 </html>

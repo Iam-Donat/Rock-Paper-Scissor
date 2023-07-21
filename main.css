@@ -1,13 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
-
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-
-
 
 html,
 body {
@@ -29,15 +25,15 @@ a {
 }
 
 button {
-   border: none;
-   border-radius: 5px;
-   margin-top: 1rem;
-   padding:.5rem 1rem;
-   background-color: black;
-   color: antiquewhite;
-   display: inline-block;
-   cursor: pointer;
-   transform: all .7s ease;
+    border: none;
+    border-radius: 5px;
+    margin-top: 1rem;
+    padding:.5rem 1rem;
+    background-color: black;
+    color: antiquewhite;
+    display: inline-block;
+    cursor: pointer;
+    transform: all .7s ease;
 }
 
 hr {
@@ -130,10 +126,10 @@ summary, details p {
 }
 /* ==== MODAL ==== */
 .modal {
-    position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     background-color: black;
     color: antiquewhite;
     border-radius: 10px;
@@ -149,8 +145,7 @@ summary, details p {
     gap: 2rem;
     z-index: 1000;
     box-shadow: 0 0 0.5rem antiquewhite;
-    padding: 2rem;
-    
+    padding: 2rem; 
 }
 
 .modal button {
