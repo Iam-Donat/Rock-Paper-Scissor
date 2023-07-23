@@ -104,3 +104,10 @@ movesBtn.forEach(btn => {
 });
 
 restartButton.addEventListener("click", resetGame);
+
+// ====== Copyright ===== //
+let year = document.querySelector(".year");
+
+const getCurrentYear = new Date().getFullYear();
+
+year.textContent = getCurrentYear;
