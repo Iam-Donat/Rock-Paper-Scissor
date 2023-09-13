@@ -1,6 +1,13 @@
 /* < !-- Google fonts --> */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&family=VT323&display=swap');
 
+/* --- Root --- */
+:root {
+    --primary-color: #deb887;
+    --secondary-color: #222121;
+
+    --alt-color: #a52a2a;
+}
 
 * {
     margin: 0;
@@ -14,9 +21,18 @@ html {
 }
 
 body {
-    background-color: antiquewhite;
+    background-color: var(--secondary-color);
     font-family: 'VT323', monospace;
     min-height: 100vh;
+}
+
+h1,
+h2 {
+    font-size: 4.5rem;
+}
+
+p {
+    font-size: 2.5rem;
 }
 
 a {
@@ -24,6 +40,8 @@ a {
     color: brown;
     font-weight: 700;
 }
+
+/* -- utils -- */
 
 button {
     border: none;
