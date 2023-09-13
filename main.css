@@ -3,8 +3,8 @@
 
 /* --- Root --- */
 :root {
-    --primary-color: #deb887;
-    --secondary-color: #222121;
+    --primary-color: #fed7aa;
+    --secondary-color: #1c1917;
 
     --alt-color: #a52a2a;
 }
@@ -23,7 +23,6 @@ html {
 body {
     background-color: var(--secondary-color);
     font-family: 'VT323', monospace;
-    min-height: 100vh;
 }
 
 h1,
@@ -41,23 +40,20 @@ a {
     font-weight: 700;
 }
 
-/* -- utils -- */
-
-button {
+/* -- utils classes -- */
+.btn {
     border: none;
+    outline: none;
     border-radius: 5px;
+
     margin-top: 1rem;
     padding: .5rem 1rem;
+
     background-color: black;
     color: antiquewhite;
     display: inline-block;
     cursor: pointer;
     transform: all .7s ease;
-}
-
-hr {
-    background-color: black;
-    height: 4px;
 }
 
 .title {
