@@ -8,6 +8,8 @@
 <figcaption>Screenshot Preview 👆🏾🖼️</figcaption>
 </figure>
 
+<hr>
+
 Inspired by:👉🏾 <a href='https://www.theodinproject.com/lessons/foundations-etch-a-sketch' target='_blank' style='color:teal;'>The Odin Project</a>.
 
 🌐 Live link:👉🏾 <a href='https://iam-ntwali.github.io/Rock-Paper-Scissor/' target='_blank' style='color:teal;'>Click Here</a>.
