@@ -58,7 +58,11 @@ header {
     display: none;
 }
 
-.overlay {}
+.overlay {
+    background-color: rgba(65, 65, 65, 0.5);
+    width: 100%;
+    z-index: 999;
+}
 
 .btn {
     border: 0;
@@ -139,6 +143,42 @@ header {
 
     margin: 2rem auto 0;
 }
+
+/* -- game display section -- */
+.game {
+    position: relative;
+    outline: 3px solid teal;
+}
+
+.players {
+    outline: 3px solid brown;
+    display: flex;
+    justify-content: space-around;
+    padding: 1rem;
+}
+
+.player,
+.computer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.player h1,
+.computer h1 {
+    font-size: 2.5rem;
+}
+
+.player p,
+.computer p {
+    font-size: 3rem;
+}
+
+.options p {
+    text-align: center;
+}
+
+
 
 /* media queries */
 @media (min-width: 768px) {
