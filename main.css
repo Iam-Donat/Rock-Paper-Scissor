@@ -51,6 +51,7 @@ a {
 header {
     text-align: center;
     padding: 2rem 0;
+    min-height: 10vh;
 }
 
 /* -- utils classes -- */
@@ -62,6 +63,22 @@ header {
     background-color: rgba(65, 65, 65, 0.5);
     width: 100%;
     z-index: 999;
+}
+
+.modal {
+    position: fixed;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+
+    text-align: center;
+    width: 100%;
+    max-width: 50rem;
+    min-height: 50vh;
+    padding: 2rem;
+
+    background-color: var(--alt-color2);
+    border-radius: 1rem;
 }
 
 .btn {
@@ -91,8 +108,9 @@ header {
 .container {
     outline: 2px solid yellow;
     width: 100%;
-    max-width: 100%;
-    margin: 1rem auto 0;
+    max-width: 768px;
+    min-height: 70vh;
+    margin: 3rem auto 0;
 }
 
 /* -- description --- */
@@ -166,7 +184,7 @@ header {
 
 .player h1,
 .computer h1 {
-    font-size: 2.5rem;
+    font-size: 3rem;
 }
 
 .player p,
@@ -174,17 +192,72 @@ header {
     font-size: 3rem;
 }
 
+.options {
+    margin-top: 4rem;
+}
+
 .options p {
+    text-align: center;
+    font-size: 2rem;
+}
+
+.options div {
+    display: flex;
+    justify-content: center;
+    gap: 5rem;
+
+    margin-top: 3rem;
+}
+
+.moves span {
+    border: 1px solid var(--alt-color2);
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0px 0px 5px 3px var(--alt-color2);
+
+    font-size: 3rem;
+
+    transition: all .10s ease;
+}
+
+.moves span:active {
+    background-color: var(--alt-color2);
+    transform: scale(0.8);
+}
+
+.rounds {
+    margin-top: 2rem;
+    min-height: 5rem;
+}
+
+.rounds p {
     text-align: center;
 }
 
-
+/* footer */
+footer {
+    text-align: center;
+}
 
 /* media queries */
-@media (min-width: 768px) {
+@media (min-width: 1280px) {
     .container {
         outline: 2px solid goldenrod;
-        width: 100%;
-        max-width: 768px;
+        width: 90%;
+        max-width: 1280px;
+    }
+
+    .description {
+        font-size: 1.8rem;
+    }
+
+    .player h1,
+    .computer h1 {
+        font-size: 3.5rem;
+    }
+
+    .player p,
+    .computer p {
+        font-size: 3.5rem;
     }
 }
