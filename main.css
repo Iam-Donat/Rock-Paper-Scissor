@@ -9,6 +9,8 @@
 
     --alt-color: #b91c1c;
     --alt-color2: #0d9488;
+
+    line-height: 1.6em - .5rem;
 }
 
 * {
@@ -35,9 +37,9 @@ h2 {
 }
 
 p {
-    font-size: 2.5rem;
+    font-size: 1.6rem;
     font-family: 'Source Code Pro', monospace;
-    font-weight: 300;
+    font-weight: 500;
 }
 
 a {
@@ -46,10 +48,21 @@ a {
     font-weight: 700;
 }
 
+header {
+    text-align: center;
+    padding: 2rem 0;
+}
+
 /* -- utils classes -- */
+.hidden {
+    display: none;
+}
+
+.overlay {}
+
 .btn {
-    border: none;
-    outline: none;
+    border: 0;
+    outline: 0;
     border-radius: 5px;
 
     margin-top: 1rem;
@@ -57,7 +70,81 @@ a {
 
     background-color: black;
     color: antiquewhite;
-    display: inline-block;
+    font-size: 1.2em;
+    font-family: 'VT323',
+        monospace;
+    ;
+
+    display: block;
     cursor: pointer;
-    transform: all .7s ease;
+    transform: all .10s ease;
+}
+
+.btn:active {
+    transform: scale(0.8);
+}
+
+.container {
+    outline: 2px solid yellow;
+    width: 100%;
+    max-width: 100%;
+    margin: 1rem auto 0;
+}
+
+/* -- description --- */
+.description {
+    /* outline: 3px solid brown; */
+    text-align: center;
+    padding: 1rem 0;
+}
+
+/* --- help section --- */
+.help {
+    position: relative;
+    padding: 1rem 0;
+    outline: 3px solid brown;
+}
+
+.help-btn {
+    margin: 0 auto 1rem;
+}
+
+/* == help modal == */
+.help-modal {
+    position: fixed;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 35%;
+
+    text-align: center;
+    width: 100%;
+    max-width: 50rem;
+    padding: 2rem;
+
+    background-color: var(--alt-color2);
+    border-radius: 1rem;
+}
+
+.help-modal p {
+    color: var(--secondary-color);
+    font-size: 1.2rem;
+}
+
+.help-modal a {
+    color: var(--primary-color);
+}
+
+.help-modal .btn {
+    background-color: var(--alt-color);
+
+    margin: 2rem auto 0;
+}
+
+/* media queries */
+@media (min-width: 768px) {
+    .container {
+        outline: 2px solid goldenrod;
+        width: 100%;
+        max-width: 768px;
+    }
 }

@@ -21,25 +21,26 @@
             Welcome to my Rock Paper Scissors project!! <br>
             a SIMPLE yet an INTERACTIVE game using basics of logics in JS🙂
         </p>
-        <div class="help-modal">
-            <p>
-                <br>
-                <b>It is easy to play 😉</b> <br>
-                U just have to play against the computer and try to beat it to 5 moves to win the Game. <br> More about
-                this
-                game <a href="https://en.wikipedia.org/wiki/Rock%E2%80%93paper%E2%80%93scissors" target="_blank">
-                    Read this
-                    Wikipedia 📃
-                </a>.
-            </p>
-            <button class="btn close-btn">
-                CLOSE ❌
-            </button>
-        </div>
         <div class="help">
-            <button class="btn">
+            <button class="help-btn btn">
                 How To Play❓
             </button>
+            <div class="help-modal hidden">
+                <p>
+                    <strong>It is easy to play 😉</strong> <br>
+                    U just have to play against the computer and try to beat it to 5 moves to win the Game. <br> More
+                    about
+                    this
+                    game <br>
+                    👉🏾<a href="https://en.wikipedia.org/wiki/Rock%E2%80%93paper%E2%80%93scissors" target="_blank">
+                        Read this
+                        Wikipedia 📃
+                    </a>
+                </p>
+                <button class="btn close-btn">
+                    Close ❌
+                </button>
+            </div>
         </div>
         <section class="gameDisplay">
 
@@ -54,7 +55,7 @@
     <div class="modal display">
         <p>Game is over!!</p>
         <p class="winnerDisplay">You win the Game 👏🏾🏆</p>
-        <button id="restartBtn">Restart Game</button>
+        <button id="restartBtn btn">Restart Game</button>
     </div>
     <div class="overlay display"></div>
 
