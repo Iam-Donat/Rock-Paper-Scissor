@@ -126,7 +126,7 @@ header {
 }
 
 .container {
-    outline: 2px solid yellow;
+    /* outline: 2px solid yellow; */
     width: 100%;
     max-width: 768px;
     min-height: 70vh;
@@ -144,7 +144,7 @@ header {
 .help {
     position: relative;
     padding: 1rem 0;
-    outline: 3px solid brown;
+    /* outline: 3px solid brown; */
 }
 
 .help-btn {
@@ -185,11 +185,11 @@ header {
 /* -- game display section -- */
 .game {
     position: relative;
-    outline: 3px solid teal;
+    /* outline: 3px solid teal; */
 }
 
 .players {
-    outline: 3px solid brown;
+    /* outline: 3px solid brown; */
     display: flex;
     justify-content: space-around;
     padding: 1rem;
@@ -262,7 +262,7 @@ footer {
 /* media queries */
 @media (min-width: 1280px) {
     .container {
-        outline: 2px solid goldenrod;
+        /* outline: 2px solid goldenrod; */
         width: 90%;
         max-width: 1280px;
     }
