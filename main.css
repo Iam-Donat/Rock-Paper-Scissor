@@ -65,8 +65,12 @@ header {
 }
 
 .overlay {
-    background-color: rgba(65, 65, 65, 0.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(65, 65, 65, .9);
     width: 100%;
+    height: 100vh;
     z-index: 999;
 }
 
@@ -180,12 +184,13 @@ header {
     background-color: var(--alt-color);
 
     margin: 2rem auto 0;
+    font-size: 1.5em;
 }
 
 /* -- game display section -- */
 .game {
     position: relative;
-    /* outline: 3px solid teal; */
+    margin-top: 3rem;
 }
 
 .players {

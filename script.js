@@ -103,10 +103,12 @@ movesBtn.forEach(btn => {
     });
 });
 
-restartButton.addEventListener("click", resetGame);
+// restartButton.addEventListener("click", resetGame);
 
 // ====== Copyright ===== //
 let year = document.querySelector(".year");
+
+console.log(year);
 
 const getCurrentYear = new Date().getFullYear();
 
