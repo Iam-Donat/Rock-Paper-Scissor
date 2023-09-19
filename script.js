@@ -1,5 +1,7 @@
 // === Get HTLM Elements === //
-const overlay = document.querySelector('.overlay');
+const modalEndGame = document.querySelector('.end-game'); //modal
+const resetBtn = document.querySelector('.reset__btn'); //reset btn
+const overlay = document.querySelector('.overlay'); //overlay
 
 const scoreDisplayPlayer = document.querySelector('.player__score');
 const scoreDisplayComputer = document.querySelector('.computer__score');
@@ -7,6 +9,7 @@ const scoreDisplayComputer = document.querySelector('.computer__score');
 const playerMoves = document.querySelectorAll('.moves span');
 console.log(playerMoves);
 
+const numberOfRound = document.querySelector('#round')
 const resultDisplay = document.querySelector('.result');
 const moveResult = document.querySelector('.state')
 const playerMove = document.querySelector('.player__move');
@@ -37,6 +40,12 @@ function playRound(player) { //dictate the outcome of each round
         moveResult.textContent = `${computerchoice} beats ${player}`;
     }
 
+    if (scoreComputer > 5 || scorePlayer > 5) {
+        endGame();
+    } else {
+        round++;
+    }
+
 }
 function playersSelection(player, computer) {
     if (player === computer) {
@@ -52,6 +61,10 @@ function playersSelection(player, computer) {
         scoreDisplayComputer.textContent = scoreComputer++
         return `Computer wins!`;
     }
+}
+
+function endGame() {
+
 }
 
 //EventListener to Trigger gameplay 
@@ -82,7 +95,5 @@ closeModal.addEventListener('click', () => {
 let year = document.querySelector(".year");
 
 // console.log(year);
-
 const getCurrentYear = new Date().getFullYear();
-
 year.textContent = getCurrentYear;
