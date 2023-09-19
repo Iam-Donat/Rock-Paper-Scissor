@@ -2,6 +2,8 @@
 const modalEndGame = document.querySelector('#modal'); //modal
 const winnerDisplay = document.querySelector('.winnerDisplay')
 const resetBtn = document.querySelector('.reset__btn'); //reset btn
+const playerScore = document.querySelector('.score__player');
+const computerScore = document.querySelector('.score__computer');
 const overlay = document.querySelector('.overlay'); //overlay
 
 const scoreDisplayPlayer = document.querySelector('.player__score');
@@ -19,7 +21,6 @@ const computerMove = document.querySelector('.computer__move');
 // Iniate values
 let scorePlayer = 1;
 let scoreComputer = 1;
-let round = 1;
 
 const choices = ['rock', 'paper', 'scissor'];
 // functions
@@ -33,47 +34,55 @@ function playRound(player) { //dictate the outcome of each round
     const computerchoice = getComputerMove();
     const roundResult = playersSelection(player, computerchoice);
 
-    resultDisplay.textContent = roundResult;
-
+    if (scorePlayer > 6 || scoreComputer > 6) return;
     if (roundResult === `It's a tie!`) {
         moveResult.textContent = ``
     } else if (roundResult === `You win!`) {
         moveResult.textContent = `${player} beats ${computerchoice}`;
+        scoreDisplayPlayer.textContent = scorePlayer++;
     } else {
+
         moveResult.textContent = `${computerchoice} beats ${player}`;
+        scoreDisplayComputer.textContent = scoreComputer++;
     }
+    resultDisplay.textContent = roundResult;
 }
 function playersSelection(player, computer) {
     if (scorePlayer >= 5 || scoreComputer >= 5) {
         endGame();
     }
-    if (player === computer) {
+
+    if (player === computer && scorePlayer > 5 || scoreComputer > 5) {
         return `It's a tie!`;
     } else if (
         (player === 'rock' && computer === 'scissor') ||
         (player === 'paper' && computer === 'rock') ||
-        (player === 'scissor' && computer === 'paper')
+        (player === 'scissor' && computer === 'paper' && scorePlayer > 5 || scoreComputer > 5)
     ) {
-        scoreDisplayPlayer.textContent = scorePlayer++
         return `You win!`;
     } else {
-        scoreDisplayComputer.textContent = scoreComputer++
         return `Computer wins!`;
     }
 }
 
 function endGame() {
+    scoreDisplayPlayer.textContent = scorePlayer;
+    scoreDisplayComputer.textContent = scoreComputer;
     overlay.classList.remove('.hidden');
     modalEndGame.style.display = 'flex';
 
     if (scorePlayer > scoreComputer) {
         winnerDisplay.textContent = `Game is over!!
-            You win the Game 👏🏾🏆`;
+            You win the Game 
+            Congratulations👏🏾🏆`;
     } else {
         winnerDisplay.textContent = `Game is over!!
             You lost the Game 😢🥲
              Try Again!!`;
     }
+
+    playerScore.textContent = `${scorePlayer}`;
+    computerScore.textContent = `${scoreComputer}`;
 }
 
 //EventListener to Trigger gameplay 
