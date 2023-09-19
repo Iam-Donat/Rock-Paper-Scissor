@@ -47,7 +47,7 @@ function playRound(player) { //dictate the outcome of each round
     }
     resultDisplay.textContent = roundResult;
 }
-function playersSelection(player, computer) {
+function playersSelection(player, computer) { // check each choice on every event 
     if (scorePlayer >= 5 || scoreComputer >= 5) {
         endGame();
     }
@@ -65,7 +65,7 @@ function playersSelection(player, computer) {
     }
 }
 
-function endGame() {
+function endGame() { //End the game when score reach at 5
     scoreDisplayPlayer.textContent = scorePlayer;
     scoreDisplayComputer.textContent = scoreComputer;
     overlay.classList.remove('.hidden');
