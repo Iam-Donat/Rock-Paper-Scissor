@@ -1,5 +1,6 @@
 // === Get HTLM Elements === //
-const modalEndGame = document.querySelector('.end-game'); //modal
+const modalEndGame = document.querySelector('#modal'); //modal
+const winnerDisplay = document.querySelector('.winnerDisplay')
 const resetBtn = document.querySelector('.reset__btn'); //reset btn
 const overlay = document.querySelector('.overlay'); //overlay
 
@@ -16,8 +17,8 @@ const playerMove = document.querySelector('.player__move');
 const computerMove = document.querySelector('.computer__move');
 
 // Iniate values
-let scorePlayer = 0;
-let scoreComputer = 0;
+let scorePlayer = 1;
+let scoreComputer = 1;
 let round = 1;
 
 const choices = ['rock', 'paper', 'scissor'];
@@ -31,7 +32,9 @@ function getComputerMove() { //getting random computer move
 function playRound(player) { //dictate the outcome of each round
     const computerchoice = getComputerMove();
     const roundResult = playersSelection(player, computerchoice);
+
     resultDisplay.textContent = roundResult;
+
     if (roundResult === `It's a tie!`) {
         moveResult.textContent = ``
     } else if (roundResult === `You win!`) {
@@ -39,15 +42,11 @@ function playRound(player) { //dictate the outcome of each round
     } else {
         moveResult.textContent = `${computerchoice} beats ${player}`;
     }
-
-    if (scoreComputer > 5 || scorePlayer > 5) {
-        endGame();
-    } else {
-        round++;
-    }
-
 }
 function playersSelection(player, computer) {
+    if (scorePlayer >= 5 || scoreComputer >= 5) {
+        endGame();
+    }
     if (player === computer) {
         return `It's a tie!`;
     } else if (
@@ -64,7 +63,17 @@ function playersSelection(player, computer) {
 }
 
 function endGame() {
+    overlay.classList.remove('.hidden');
+    modalEndGame.style.display = 'flex';
 
+    if (scorePlayer > scoreComputer) {
+        winnerDisplay.textContent = `Game is over!!
+            You win the Game 👏🏾🏆`;
+    } else {
+        winnerDisplay.textContent = `Game is over!!
+            You lost the Game 😢🥲
+             Try Again!!`;
+    }
 }
 
 //EventListener to Trigger gameplay 
@@ -73,6 +82,17 @@ playerMoves.forEach(move => {
         const player = move.className
         playRound(player)
     })
+})
+
+// Reset Btn Eventlistenner
+resetBtn.addEventListener('click', () => {
+    scorePlayer = 1;
+    scoreComputer = 1;
+    modalEndGame.style.display = 'none';
+    scoreDisplayComputer.textContent = 0
+    scoreDisplayPlayer.textContent = 0;
+    resultDisplay.textContent = '';
+    moveResult.textContent = '';
 })
 //Modals
 // === Modal How to PLay 
