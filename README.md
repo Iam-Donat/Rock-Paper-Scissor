@@ -1,6 +1,8 @@
 # Rock-Paper-Scissor-Game <br>
 
-## A Simple Rock Paper Scissor Game
+## Welcome to my Rock Paper Scissors project repo!!
+
+    a SIMPLE yet an INTERACTIVE game using basics of logics in JS🙂
 
 <figure>
 <img src="./assets/Preview 1.png" alt="preview" width="300">
