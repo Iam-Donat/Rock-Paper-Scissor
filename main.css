@@ -17,7 +17,6 @@ body {
     font-family: 'VT323', monospace;
     color: var(--primary-color);
     position: relative;
-    overflow: hidden;
 }
 
 h1,
@@ -116,7 +115,6 @@ footer {
 /* -- description --- */
 .description {
     text-align: center;
-    padding: 1rem 0;
     max-width: 50ch;
     margin: 0 auto;
 }
