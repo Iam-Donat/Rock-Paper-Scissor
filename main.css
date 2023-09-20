@@ -19,12 +19,9 @@
     box-sizing: border-box;
 }
 
-html {
-    scroll-behavior: smooth;
-    font-size: 10px;
-}
-
+html,
 body {
+    font-size: 10px;
     background-color: var(--secondary-color);
     font-family: 'VT323', monospace;
     color: var(--primary-color);
@@ -54,6 +51,10 @@ header {
     padding: 2rem 0;
     min-height: 10vh;
     background-color: black;
+}
+
+footer {
+    text-align: center;
 }
 
 /* -- utils classes -- */
@@ -103,17 +104,14 @@ header {
     border: 0;
     outline: 0;
     border-radius: 5px;
-
     margin-top: 1rem;
     padding: .5rem 1rem;
-
     background-color: black;
     color: antiquewhite;
     font-size: 1.5em;
     font-family: 'VT323',
         monospace;
     ;
-
     display: block;
     cursor: pointer;
     transform: all .10s ease;
@@ -124,7 +122,6 @@ header {
 }
 
 .container {
-    /* outline: 2px solid yellow; */
     width: 100%;
     max-width: 768px;
     min-height: 80vh;
@@ -133,7 +130,6 @@ header {
 
 /* -- description --- */
 .description {
-    /* outline: 3px solid brown; */
     text-align: center;
     padding: 1rem 0;
     max-width: 50ch;
@@ -144,7 +140,6 @@ header {
 .help {
     position: relative;
     padding: 1rem 0;
-    /* outline: 3px solid brown; */
 }
 
 .help-btn {
@@ -157,21 +152,17 @@ header {
     transform: translate(-50%, -50%);
     left: 50%;
     top: 35%;
-
     text-align: center;
     width: 90%;
     max-width: 50rem;
     padding: 2rem;
-
     background-color: var(--alt-color2);
     border-radius: 1rem;
-
     z-index: 2000;
 }
 
 .help-modal p {
     color: var(--secondary-color);
-    font-size: 1.2rem;
     max-width: 40ch;
     margin: 0 auto;
 }
@@ -182,9 +173,8 @@ header {
 
 .help-modal .btn {
     background-color: var(--alt-color);
-
     margin: 2rem auto 0;
-    font-size: 1.5em;
+    font-size: inherit;
 }
 
 /* -- game display section -- */
@@ -208,10 +198,7 @@ header {
 }
 
 .player h1,
-.computer h1 {
-    font-size: 3rem;
-}
-
+.computer h1,
 .player p,
 .computer p {
     font-size: 3rem;
@@ -230,7 +217,6 @@ header {
     display: flex;
     justify-content: center;
     gap: 5rem;
-
     margin-top: 3rem;
 }
 
@@ -239,11 +225,8 @@ header {
     border-radius: 10px;
     padding: 2rem;
     box-shadow: 0px 0px 5px 3px var(--alt-color2);
-
     font-size: 3rem;
-
     transition: all .10s ease;
-
     user-select: none;
 }
 
@@ -261,33 +244,21 @@ header {
     text-align: center;
 }
 
-/* footer */
-footer {
-    text-align: center;
-}
-
 /* media queries */
 @media (min-width: 1280px) {
     .container {
-        /* outline: 2px solid goldenrod; */
         width: 90%;
         max-width: 1280px;
     }
 
-    .description {
-        font-size: 1.8rem;
-    }
-
+    .description,
     .help-modal p,
     .help-modal .close-btn {
         font-size: 1.8rem;
     }
 
     .player h1,
-    .computer h1 {
-        font-size: 3.5rem;
-    }
-
+    .computer h1,
     .player p,
     .computer p {
         font-size: 3.5rem;
