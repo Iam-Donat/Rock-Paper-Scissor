@@ -48,16 +48,13 @@ function playRound(player) { //dictate the outcome of each round
     resultDisplay.textContent = roundResult;
 }
 function playersSelection(player, computer) { // check each choice on every event 
-    if (scorePlayer >= 5 || scoreComputer >= 5) {
-        endGame();
-    }
 
-    if (player === computer && scorePlayer > 5 || scoreComputer > 5) {
+    if (player === computer) {
         return `It's a tie!`;
     } else if (
         (player === 'rock' && computer === 'scissor') ||
         (player === 'paper' && computer === 'rock') ||
-        (player === 'scissor' && computer === 'paper' && scorePlayer > 5 || scoreComputer > 5)
+        (player === 'scissor' && computer === 'paper')
     ) {
         return `You win!`;
     } else {
@@ -76,9 +73,9 @@ function endGame() { //End the game when score reach at 5
             You win the Game 
             Congratulations👏🏾🏆`;
     } else {
-        winnerDisplay.textContent = `Game is over!!
+        winnerDisplay.textContent = `Game is over!! 
             You lost the Game 😢🥲
-             Try Again!!`;
+            Try Again!!`;
     }
 
     playerScore.textContent = `${scorePlayer}`;
@@ -88,8 +85,11 @@ function endGame() { //End the game when score reach at 5
 //EventListener to Trigger gameplay 
 playerMoves.forEach(move => {
     move.addEventListener('click', () => {
-        const player = move.className
-        playRound(player)
+        const player = move.className;
+
+        if (scorePlayer >= 5 || scoreComputer >= 5) {
+            endGame();
+        } else { playRound(player) }
     })
 })
 
@@ -104,7 +104,7 @@ resetBtn.addEventListener('click', () => {
     moveResult.textContent = '';
 })
 //Modals
-// === Modal How to PLay 
+// === Modal How to Play ===
 const helpBtn = document.querySelector('.help-btn');
 
 const helpModal = document.querySelector('.help-modal');
