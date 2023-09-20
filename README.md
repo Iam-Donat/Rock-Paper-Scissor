@@ -3,9 +3,23 @@
 ## A Simple Rock Paper Scissor Game
 
 <figure>
-<img src="./assets/scrnshot.png" alt="preview" width="300">
+<img src="./assets/Preview 1.png" alt="preview" width="300">
+<figcaption>Preview 1 👆🏾🖼️</figcaption>
+</figure>
 
-<figcaption>Screenshot Preview 👆🏾🖼️</figcaption>
+<figure>
+<img src="./assets/Preview 3.png" alt="preview" width="300">
+<figcaption>Preview 2 👆🏾🖼️</figcaption>
+</figure>
+
+<figure>
+<img src="./assets/Preview 2.png" alt="preview" width="300">
+<figcaption>Preview 3 👆🏾🖼️</figcaption>
+</figure>
+
+<figure>
+<img src="./assets/Preview 4.png" alt="preview" width="300">
+<figcaption>Preview 4 👆🏾🖼️</figcaption>
 </figure>
 
 <hr>
