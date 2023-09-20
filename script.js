@@ -19,9 +19,8 @@ const playerMove = document.querySelector('.player__move');
 const computerMove = document.querySelector('.computer__move');
 
 // Iniate values
-let scorePlayer = 1;
-let scoreComputer = 1;
-
+let scorePlayer = 0;
+let scoreComputer = 0;
 const choices = ['rock', 'paper', 'scissor'];
 // functions
 function getComputerMove() { //getting random computer move
@@ -34,16 +33,16 @@ function playRound(player) { //dictate the outcome of each round
     const computerchoice = getComputerMove();
     const roundResult = playersSelection(player, computerchoice);
 
-    if (scorePlayer > 6 || scoreComputer > 6) return;
+
+
     if (roundResult === `It's a tie!`) {
         moveResult.textContent = ``
     } else if (roundResult === `You win!`) {
         moveResult.textContent = `${player} beats ${computerchoice}`;
-        scoreDisplayPlayer.textContent = scorePlayer++;
     } else {
 
         moveResult.textContent = `${computerchoice} beats ${player}`;
-        scoreDisplayComputer.textContent = scoreComputer++;
+
     }
     resultDisplay.textContent = roundResult;
 }
@@ -56,8 +55,10 @@ function playersSelection(player, computer) { // check each choice on every even
         (player === 'paper' && computer === 'rock') ||
         (player === 'scissor' && computer === 'paper')
     ) {
+        scoreDisplayPlayer.textContent = scorePlayer++;
         return `You win!`;
     } else {
+        scoreDisplayComputer.textContent = scoreComputer++;
         return `Computer wins!`;
     }
 }
@@ -87,6 +88,7 @@ playerMoves.forEach(move => {
     move.addEventListener('click', () => {
         const player = move.className;
 
+
         if (scorePlayer >= 5 || scoreComputer >= 5) {
             endGame();
         } else { playRound(player) }
@@ -95,8 +97,8 @@ playerMoves.forEach(move => {
 
 // Reset Btn Eventlistenner
 resetBtn.addEventListener('click', () => {
-    scorePlayer = 1;
-    scoreComputer = 1;
+    scorePlayer = 0;
+    scoreComputer = 0;
     modalEndGame.style.display = 'none';
     scoreDisplayComputer.textContent = 0
     scoreDisplayPlayer.textContent = 0;

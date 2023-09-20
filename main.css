@@ -74,24 +74,18 @@ footer {
 
 #modal {
     position: absolute;
-
     display: none;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 3rem;
-
     text-align: center;
     width: 100%;
     max-width: 100%;
     min-height: 100vh;
-    padding: 2rem;
-
     background-color: var(--secondary-color);
-    border-radius: 1rem;
     border: 2px solid var(--alt-color2);
     box-shadow: 0px 0px 5px 3px var(--alt-color2);
-
     z-index: 2000;
 }
 
@@ -104,7 +98,6 @@ footer {
     border: 0;
     outline: 0;
     border-radius: 5px;
-    margin-top: 1rem;
     padding: .5rem 1rem;
     background-color: black;
     color: antiquewhite;
